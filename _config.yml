@@ -1,18 +1,18 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
-url: 'http://joshgerdes.com/jekyll-uno'
-baseurl: '/jekyll-uno'
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+title: Shyam.Tech
+description: 'Dev. Travel. Tinker.'
+url: 'http://shyam.tech/'
+baseurl: ''
+google_analytics: 'UA-107323761-1'
+disqus_shortname: 'shyam-tech'
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'Shyam Saraswati'
+  email: contact@shyam.tech
+  # twitter_username: joshgerdes
+  # facebook_username: joshgerdes
+  github_username:  ssaraswati
+  # linkedin_username:  joshgerdes
 
 defaults:
   -
@@ -39,5 +39,5 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-gems: ['jekyll-paginate']
+plugins: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
