@@ -34,5 +34,9 @@ $(document).ready(function () {
     $('.navigation-wrapper').toggleClass('visible')
     $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
   })
+  console.log('%c Computer says... ', 'background: #222; color: #bada55');
 
+    setTimeout(function (){ console.log('%c NO!!! ', 'background: #222; color: #ff0000') }, 3000)
+    setTimeout(function (){ console.log('%c But who listens to computers ', 'background: #332607; color: #ee42f4') }, 5000)
+    
 })
