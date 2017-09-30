@@ -37,6 +37,16 @@
               </li>
             {% endif %}
 
+            {% if site.author.wallpaper_url %}
+            <!-- Twitter -->
+            <li class="navigation__item">
+              <a href="{{ site.author.wallpaper_url }}" title="Wallpapers" target="_blank">
+                <i class="icon icon-photo"></i>
+                <span class="label">Wallpapers</span>
+              </a>
+            </li>
+          {% endif %}
+
             {% if site.author.facebook_username %}
               <!-- Facebook -->
               <li class="navigation__item">
