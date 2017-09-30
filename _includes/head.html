@@ -28,6 +28,18 @@
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.baseurl }}/images/favicons/favicon-194x194.png" />
 
+  {% if site.google_analytics and jekyll.environment != "development" %}
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+  
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+
   <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-72x72.png">
