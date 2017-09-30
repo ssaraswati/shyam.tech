@@ -1612,33 +1612,17 @@ input[type="tel"] {
 			background-position: center center; }
 			.panel-cover.panel-cover--collapsed .panel-main__inner {
 				display: block;
-				padding: 70px 0 30px 0; }
+				padding: 40px 0 30px 0; }
 			.panel-cover.panel-cover--collapsed .panel-cover__logo {
-				width: 60px;
+				width: 40px;
 				border-width: 2px; }
+				.panel-cover.panel-cover--collapsed .user-image{
+					display: none; }
 			.panel-cover.panel-cover--collapsed .panel-cover__description {
 				display: none; }
 			.panel-cover.panel-cover--collapsed .panel-cover__divider {
 				display: none;
 				margin: 1em auto; }
-
-		.cover-navigation {
-			display: block;
-			position: relative;
-			float: left;
-			clear: left;
-			width: 100%; }
-			.cover-navigation .navigation {
-				display: block;
-				width: 100%; }
-				.cover-navigation .navigation li {
-					width: 80%;
-					margin-bottom: .4em; }
-			.cover-navigation.navigation--social {
-				padding-top: 5px; }
-				.cover-navigation.navigation--social .navigation li {
-					display: inline-block;
-					width: 25.8%; }
 
 	.content-wrapper {
 		width: 80%;
@@ -1649,9 +1633,7 @@ input[type="tel"] {
 		margin-right: 0;
 		margin-left: 0; }
 
-	.navigation__item {
-		width: 100%;
-		margin: 0 0 .4em 0; } }
+	 }
 @media all and (max-width: 340px) {
 	.panel-main__inner {
 		padding: 0 5%; }
