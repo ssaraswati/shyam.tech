@@ -10,11 +10,9 @@ phases:
       - bundle install
       - echo "******** Building Jekyll site ********"
       - bundle exec jekyll build
-      - echo "******** Compressing build artifacts ********"
-      - zip site _site/
       - echo "******** Uploading site to S3 website ********"
       - aws s3 sync _site/ s3://shyam.tech/
 artifacts:
   files:
-    - site.zip
-    - _site/**/*
+    - '**/*'
+  base-directory: _site
