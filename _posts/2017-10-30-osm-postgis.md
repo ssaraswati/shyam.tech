@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OSM Data in PostGIS on docker"
-date: 2017-09-30
+date: 2017-10-20
 excerpt: "Loading OSM data into PostGIS on Docker"
 tags: [sql, docker, spatial, geo, gis, postgres, data, db, database]
 comments: true
