@@ -14,7 +14,7 @@ How to get started with OpenStreetMap (OSM) data in Postgres/PostGIS databases u
  * Have docker installed on your machine
  
 
- ## Installing PostGIS
+## Installing PostGIS
  Using docker we can simplify the installation of Postgres & PostGIS and use the same installation on any operating system. The [mdillon/postgis](https://hub.docker.com/r/mdillon/postgis/) Docker image extends the official Postgres image with PostGIS extension’s to support spatial data queries.
 
 Start the database with
