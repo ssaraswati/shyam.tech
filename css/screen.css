@@ -1,0 +1,218 @@
+
+/* Taken from http://browserhacks.com/ */
+@supports (-webkit-appearance:none) and (not (-ms-ime-align:auto)){
+    #chrome_detect::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?action=browser_chrome");
+    }
+}
+
+@supports (-moz-appearance:meterbar) {
+    #firefox_detect::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?action=browser_firefox");
+    }
+}
+
+/* Taken from https://browserstrangeness.github.io/css_hacks.html */
+@supports (-ms-ime-align:auto) {
+    #edge_detect::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?action=browser_edge")
+    }
+}
+
+
+
+
+/** Orientation detection **/
+
+@media (orientation: portrait) {
+    #orientation::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?orientation=portrait");
+    }
+}
+
+@media (orientation: landscape) {
+    #orientation::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?orientation=landscape");
+    }
+}
+
+/* Width part of the Resolution */
+
+@media (min-device-width: 240px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=360");
+    }
+}
+
+
+@media (min-device-width: 360px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=360");
+    }
+}
+
+@media (min-device-width: 480px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=480");
+    }
+}
+
+@media (min-device-width: 640px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=640");
+    }
+}
+
+@media (min-device-width: 720px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=720");
+    }
+}
+
+@media (min-device-width: 1024px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=1024");
+    }
+}
+
+@media (min-device-width: 1280px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=1280");
+    }
+}
+
+@media (min-device-width: 1366px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=1366");
+    }
+}
+
+@media (min-device-width: 1920px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=1920");
+    }
+}
+
+@media (min-device-width: 3840px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=3840");
+    }
+}
+
+@media (min-device-width: 4096px) {
+    #width::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?width=4096");
+    }
+}
+
+/* Height part of the resolution */
+
+@media (min-device-height: 240px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=240");
+    }
+}
+
+
+@media (min-device-height: 320px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=320");
+    }
+}
+
+@media (min-device-height: 360px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=360");
+    }
+}
+
+@media (min-device-height: 480px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=480");
+    }
+}
+
+@media (min-device-height: 504px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=504");
+    }
+}
+
+@media (min-device-height: 540px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=540");
+    }
+}
+
+@media (min-device-height: 568px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=568");
+    }
+}
+
+@media (min-device-height: 576px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=576");
+    }
+}
+
+@media (min-device-height: 600px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=600");
+    }
+}
+
+@media (min-device-height: 640px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=640");
+    }
+}
+
+@media (min-device-height: 667px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=667");
+    }
+}
+
+@media (min-device-height: 690px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=690");
+    }
+}
+
+@media (min-device-height: 720px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=720");
+    }
+}
+
+@media (min-device-height: 768px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=768");
+    }
+}
+
+@media (min-device-height: 1024px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=1024");
+    }
+}
+
+@media (min-device-height: 1080px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=1080");
+    }
+}
+
+@media (min-device-height: 1366px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=1366");
+    }
+}
+
+@media (min-device-height: 2160px) {
+    #height::after {
+        content: url("https://uwm3c2tdzd.execute-api.us-east-1.amazonaws.com/Prod/shyam.tech?height=2160");
+    }
+}
+
