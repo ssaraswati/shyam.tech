@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: post
 title: "Helm Environment Variables with Booleans and Integers"
 excerpt: "Use non string values in helm charts without the weirdness"
@@ -107,4 +107,4 @@ Using
 ```
 
 # Thoughts
-Each of the three options solve the same problem without having an impact on the deployed application, by making use of tricks of yaml, go templates, and kubernetes we can work around their incompatabilities. While probably the least 'correct' of the three options using the !! syntax of yaml can help to improve the readability of our templates or end up feeling like a lot of boilerplate.
+Each of the three options solve the same problem without having an impact on the deployed application, by making use of tricks of yaml, go templates, and kubernetes we can work around their incompatabilities. While probably the least 'correct' of the three options using the !! syntax of yaml can help to improve the readability of our templates or end up feeling like a lot of boilerplate. -->
