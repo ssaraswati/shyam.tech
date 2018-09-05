@@ -220,8 +220,8 @@ Resources:
         Comment: !Join [" ", ["CloudFront distribution for ", !Ref SiteBaseUrl]]
         HttpVersion: http2
         Aliases:
-        - !Join ["", [cdn-, !Ref SiteBaseUrl]]
-        - !Join ["", [www, !Ref SiteBaseUrl]]
+        - !Join [".", [cdn-, !Ref SiteBaseUrl]]
+        - !Join [".", [www, !Ref SiteBaseUrl]]
         - !Ref SiteBaseUrl
         DefaultCacheBehavior:
           AllowedMethods:
