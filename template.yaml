@@ -212,11 +212,7 @@ Resources:
           Id: !Join ["", [cdn-, !Ref SiteBaseUrl]]
           CustomOriginConfig:
             HTTPPort: '80'
-            HTTPSPort: '443'
-            OriginProtocolPolicy: https-only
-            OriginSSLProtocols:
-              - TLSv1.2
-              - SSLv3
+            OriginProtocolPolicy: http-only
         Enabled: 'true'
         Comment: !Join [" ", ["CloudFront distribution for ", !Ref SiteBaseUrl]]
         HttpVersion: http2
