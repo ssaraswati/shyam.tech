@@ -143,6 +143,7 @@ Resources:
             post_build:
               commands:
                 - aws s3 cp --recursive --acl public-read ./ s3://${SiteBucketName}/ 
+                - aws cloudfront create-invalidation --distribution-id "${stackDistribution}" --paths '/*'
           artifacts:
             type: zip
             files:
