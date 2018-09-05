@@ -214,8 +214,6 @@ Resources:
             HTTPSPort: '443'
             OriginProtocolPolicy: https-only
             OriginSSLProtocols:
-              - TLSv1
-              - TLSv1.1
               - TLSv1.2
               - SSLv3
         Enabled: 'true'
