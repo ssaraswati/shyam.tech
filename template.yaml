@@ -8,7 +8,7 @@ Parameters:
   SslCertIdParameter:
     Type: String
     Description: SslCertIdParameter of certificate in acm
-  SiteBucketName:
+  ProdSiteBucketName:
     Type: String
     Description: Name of bucket to create to host the website
   GitHubUser:
@@ -101,7 +101,7 @@ Resources:
     DeletionPolicy: Delete    
     Properties:
       AccessControl: PublicRead
-      BucketName: !Ref SiteBucketName
+      BucketName: !Ref ProdSiteBucketName
       WebsiteConfiguration:
         IndexDocument: index.html
   PipelineBucket:
@@ -142,7 +142,7 @@ Resources:
           phases:
             post_build:
               commands:
-                - aws s3 cp --recursive --acl public-read ./ s3://${SiteBucketName}/ 
+                - aws s3 cp --recursive --acl public-read ./ s3://${ProdSiteBucketName}/ 
           artifacts:
             type: zip
             files:
@@ -207,7 +207,7 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-        - DomainName: !Join [".", [!Ref SiteBucketName, "s3-website-us-east-1.amazonaws.com"]]
+        - DomainName: !Join [".", [!Ref ProdSiteBucketName, "s3-website-us-east-1.amazonaws.com"]]
           Id: !Join ["", [cdn-, !Ref SiteBaseUrl]]
           CustomOriginConfig:
             HTTPPort: '80'
