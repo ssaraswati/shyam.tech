@@ -4,7 +4,7 @@ Description: Pipeline using CodePipeline and CodeBuild for continuous delivery o
 Parameters:
   SiteBaseUrl:
     Type: String
-    Description: url of website for CloudFront
+    Description: domain of website for CloudFront
   SslCertIdParameter:
     Type: String
     Description: SslCertIdParameter of certificate in acm
@@ -37,43 +37,6 @@ Parameters:
     Type: String
     Default: "aws/codebuild/ruby:2.3.1"
     Description: The build image to use for building the app
-Metadata:
-  AWS::CloudFormation::Interface:
-    ParameterGroups:
-      - Label:
-          default: "Site Configuration"
-        Parameters:
-          - SiteBucketName
-      - Label:
-          default: "GitHub Configuration"
-        Parameters:
-          - GitHubToken
-          - GitHubUser
-          - GitHubRepo
-          - GitHubBranch
-      - Label:
-          default: "Build Configuration"
-        Parameters:
-          - BuildType
-          - BuildComputeType
-          - BuildImage
-    ParameterLabels:
-      SiteBucketName:
-        default: Name of S3 Prod Bucket to create for website hosting
-      GitHubToken:
-        default: GitHub OAuth2 Token
-      GitHubUser: 
-        default: GitHub User/Org Name
-      GitHubRepo: 
-        default: GitHub Repository Name
-      GitHubBranch: 
-        default: GitHub Branch Name
-      BuildType: 
-        default: CodeBuild type
-      BuildComputeType: 
-        default: CodeBuild instance type
-      BuildImage: 
-        default: CodeBuild image
 Resources:
   CodeBuildRole:
     Type: AWS::IAM::Role
@@ -133,7 +96,7 @@ Resources:
             Resource: "*"
             Effect: Allow
           Version: '2012-10-17'
-  ProdSiteBucket:
+  SiteBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete    
     Properties:
@@ -232,32 +195,10 @@ Resources:
           InputArtifacts:
           - Name: BuildOutput
           OutputArtifacts:
-          - Name: DeployOutputBeta
+          - Name: DeployOutput
           Configuration:
             ProjectName: !Ref CodeBuildDeploySite
           RunOrder: 1
-      - Name: DeployProd
-        Actions:
-        - Name: DeploymentApproval
-          ActionTypeId:
-            Category: Approval
-            Owner: AWS
-            Provider: Manual
-            Version: 1
-          RunOrder: 1
-        - Name: Artifact
-          ActionTypeId:
-            Category: Build
-            Owner: AWS
-            Version: '1'
-            Provider: CodeBuild
-          InputArtifacts:
-          - Name: BuildOutput
-          OutputArtifacts:
-          - Name: DeployOutputProd
-          Configuration:
-            ProjectName: !Ref CodeBuildDeploySite
-          RunOrder: 2
       ArtifactStore:
         Type: S3
         Location: !Ref PipelineBucket
@@ -303,5 +244,5 @@ Outputs:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
   SiteUrlProd:
-    Value: !GetAtt [ProdSiteBucket, WebsiteURL]
+    Value: !GetAtt [SiteBucket, WebsiteURL]
     Description: S3 Website URL
