@@ -8,7 +8,7 @@ Parameters:
   SslCertIdParameter:
     Type: String
     Description: SslCertIdParameter of certificate in acm
-  ProdSiteBucketName:
+  SiteBucketName:
     Type: String
     Description: Name of bucket to create to host the website
   GitHubUser:
@@ -96,12 +96,12 @@ Resources:
             Resource: "*"
             Effect: Allow
           Version: '2012-10-17'
-  SiteBucket:
+  ProdSiteBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete    
     Properties:
       AccessControl: PublicRead
-      BucketName: !Ref ProdSiteBucketName
+      BucketName: !Ref SiteBucketName
       WebsiteConfiguration:
         IndexDocument: index.html
   PipelineBucket:
@@ -142,7 +142,7 @@ Resources:
           phases:
             post_build:
               commands:
-                - aws s3 cp --recursive --acl public-read ./ s3://${ProdSiteBucketName}/ 
+                - aws s3 cp --recursive --acl public-read ./ s3://${SiteBucketName}/ 
           artifacts:
             type: zip
             files:
@@ -207,7 +207,7 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-        - DomainName: !Join [".", [!Ref ProdSiteBucketName, "s3-website-us-east-1.amazonaws.com"]]
+        - DomainName: !Join [".", [!Ref SiteBucketName, "s3-website-us-east-1.amazonaws.com"]]
           Id: !Join ["", [cdn-, !Ref SiteBaseUrl]]
           CustomOriginConfig:
             HTTPPort: '80'
@@ -242,5 +242,5 @@ Outputs:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
   SiteUrlProd:
-    Value: !GetAtt [SiteBucket, WebsiteURL]
+    Value: !GetAtt [ProdSiteBucket, WebsiteURL]
     Description: S3 Website URL
