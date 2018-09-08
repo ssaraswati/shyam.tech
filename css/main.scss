@@ -57,3 +57,15 @@ pre.highlight code,
   border: 3px solid #fff;
   border-radius:100%;
 }
+
+.panel-cover {
+	display: block;
+	position: fixed;
+	z-index: 900;
+	width: 100%;
+	max-width: none;
+  height: 100%;
+  background-color: #86BBD8;
+  background-image: url(/images/lines.svg);
+  background-repeat: repeat;
+}
